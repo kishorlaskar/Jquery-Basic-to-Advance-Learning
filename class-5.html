@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+		<script type="text/javascript" src="jquery.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function()
+			{
+				// alert($('td').length);//count the number of td
+				// alert($('tr').css('background-color','red'));//change the background of  tr
+				// alert($('table').html());// Shows Whole table
+				// $('table tr').each(function()
+				// {
+    //                      alert($(this).html());
+				// }); //Shows each tr element
+				// $('div a').css('background-color','red');//Here Ancestor 'div' and Descendred 'a'
+				// $('div span a').css('front-family','san-serif');//set font family of mutilple element
+				$('tr:even').css('background-color','yellow');
+				$('tr:odd').css('background-color','gray');
+			})
+		</script>
+</head>
+<body>
+
+     <table style="width:100%">
+  <tr>
+    <th>Firstname</th>
+    <th>Lastname</th>
+    <th>Age</th>
+  </tr>
+  <tr>
+    <td>Jill</td>
+    <td>Smith</td>
+    <td>50</td>
+  </tr>
+  <tr>
+    <td>Eve</td>
+    <td>Jackson</td>
+    <td>94</td>
+  </tr>
+</table> 
+
+<div class="div1">
+ <span id="spanid">
+ 	Hello This is KL <br>
+
+ 	My WebSite:<a>www.kl.com</a>
+ </span>
+	</div>
+</body>
+</html>

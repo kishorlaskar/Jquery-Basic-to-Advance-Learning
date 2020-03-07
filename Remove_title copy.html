@@ -1,0 +1,27 @@
+<html>
+<head>
+    <title>JQUERY CHAPTER 1</title>
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/Javascript">
+        $(document).ready(function()
+        {
+            var result='DIV Elements with title attribute='+$('div[title]').length+'<br/>';
+            result = 'Removing Tite Attribute<br/>'
+            $('div[title]').removeAttr('title');
+            result += 'DIV Elements without title attribute'
+            result += 'DIV Elements with title attribute='+$('div[title]').length;
+
+            ('#spanresult').html(result);
+        });
+        </script>
+        <body>
+            <div id="div1" title="MyDiv1">
+            Hello 
+        </div>
+        <div id="div2" title="MyDiv2">
+            Kishor 
+        </div>
+        <br>
+        <span id="spanresult"></span>
+        </body>
+        </html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+            // Creating a JSON object
+            var employeeJSON = {
+                "firstName": "Kishor",
+                "lastName": "Laskar",
+                "gender": "Male",
+                "salary": 50000
+            };
+
+            // Accessing data from a JSON object
+            var result = '';
+            result += 'First Name = ' + employeeJSON.firstName + '<br/>';
+            result += 'Last Name = ' + employeeJSON.lastName + '<br/>';
+            result += 'Gender = ' + employeeJSON.gender + '<br/>';
+            result += 'Salary = ' + employeeJSON.salary + '<br/>';
+
+            $('#resultDiv').html(result);
+
+		});
+
+		//JSON Arrays : What if you want to store more than one employee data in the JSON object. This is when JSON arrays can be used. A JSON array can contain multiple objects.
+
+// To create a JSON array 
+// 1. Wrap the objects in square brackets
+// 2. Each object must be separated with a comma
+
+// Creating a JSON array
+// var employeesJSON = [
+// {
+//     "firstName": "Todd",
+//     "lastName": "Grover",
+//     "gender": "Male",
+//     "salary": 50000
+// },
+// {
+//     "firstName": "Sara",
+//     "lastName": "Baker",
+//     "gender": "Female",
+//     "salary": 40000
+// }];
+
+// Reading from a JSON array : To access the employee objects in the JSON array, use the object's index position.
+
+// Retrieves the lastName of first employee object in the JSON array
+// var result = employeesJSON[0].lastName;
+
+// Retrieves the fistName of second employee object in the JSON array
+// var result = employeesJSON[1].firstName;
+
+// Nested JSON object : You can also store multiple employees in the JSON object by nesting them.
+
+// Nested JSON object example : 
+
+var employeesJSON = {
+    "Todd": {
+        "firstName": "Todd",
+        "lastName": "Grover",
+        "gender": "Male",
+        "salary": 50000
+    },
+    "Sara": {
+        "firstName": "Sara",
+        "lastName": "Baker",
+        "gender": "Female",
+        "salary": 40000
+    }
+};
+
+//Retrieves the gender of employee Todd
+var result = employeesJSON.Todd.gender;
+
+//Retrieves the salary of employee Sara
+var result = employeesJSON.Sara.salary; 
+	</script>
+</head>
+<body>
+<div id="resultDiv"></div>
+</body>
+</html>

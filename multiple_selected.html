@@ -1,0 +1,33 @@
+<html>
+<head>
+    <title></title>
+    <script src="jquery.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#selectCountries').change(function () {
+                var selectedOptions = $('#selectCountries option:selected');
+                if (selectedOptions.length > 0) {
+                    var resultString = '';
+                    selectedOptions.each(function () {
+                      
+                        resultString += 'Value = ' + $(this).val() +
+                            ', Text = ' + $(this).text() + '<br/>';
+                    });
+                    $('#divResult').html(resultString);
+                }
+            });
+        });
+    </script>
+</head>
+<body style="font-family:Arial">
+    <select id="selectCountries" multiple="multiple">
+        <option selected="selected" value="USA">United States</option>
+        <option value="IND">India</option>
+        <option value="UK">United Kingdom</option>
+        <option value="CA">Canada</option>
+        <option value="AU">Australia</option>
+    </select>
+    <br /><br />
+    <div id="divResult"></div>
+</body>
+</html>

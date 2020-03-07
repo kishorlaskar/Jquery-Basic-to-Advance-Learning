@@ -1,0 +1,37 @@
+<html>
+<head>
+    <style>
+        .containerDiv
+        {
+          color: aliceblue;
+          background-color: brown;
+          margin: 3px;
+        }
+    </style>
+    <title>JQUERY CHAPTER 1</title>
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/Javascript">
+        $(document).ready(function()
+        {
+            $('div').wrap('<div class="containerDiv"></div>');
+            // // $('dv').unwrap();
+            // // $('div').wrapAll('<div class="containerDiv"></div>');
+            // $('div').wrapinner('<div class="containerDiv"></div>');
+
+        });
+        </script>
+        </head>
+        <body>
+            <div id="div1">
+    DIV 1
+</div>
+<div id="div2">
+    DIV 2
+</div>
+<div id="div3">
+    DIV 3
+</div>
+
+        </body>
+    
+    </html>

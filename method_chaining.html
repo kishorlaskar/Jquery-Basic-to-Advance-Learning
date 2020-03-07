@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<!-- Content are Coverd
+1. What is method chaining
+2. How method chaining works
+3. When will method chaining not work
+ -->
+<head>
+	<title></title>
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			$('li')
+			     // .text() //method chaining is not working because text() method returns a string that contains the text of all the list items and not an object.
+
+			     //With the same example, method chaining works, if you use text() method to set the value for the list item. In this case, text() method sets a value for each list item in the jQuery collection object and returns that collection object. Hence the chaining works
+			     //Here I Set Value as Kishor. 
+			     // .text('Kishor')
+			     .css('color','red')
+			     .slideUp(1000).slideDown(1000)
+			     .attr('title','MY Title');
+		});
+	</script>
+</head>
+<body>
+	<ul>
+		<li>US</li>
+		<li>India</li>
+		<li>Bangladesh</li>
+		<li>Canada</li>
+		<li>Australia</li>
+	</ul>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<html>
+    <!-- 1. What are jQuery DOM manipulation methods
+2. How to set attribute values using jQuery attr() method
+3. How to retrieve attribute values using jQuery attr() method
+4. How to set multiple attribute values using jQuery attr() method
+5. How to remove an attribute using jQuery removeAttr() method -->
+    <head>
+        <title>JQUERY CHAPTER 1</title>
+        <script type="text/javascript" src="jquery.js"></script>
+        <script type="text/Javascript">
+            $(document).ready(function()
+            {
+            //    alert($('div').attr('title')); 
+               //Retrieves the title attribute value of the first matching element
+
+            //    $('div').each(function(){
+            //       alert($(this).attr('title'));
+            //    });
+            // });
+            //To retrieve the title attribute value of all the matching elements, jQuery each() method can be used.
+           //How To Set Attribute Values.it is same title value for all title attribute.
+        //    $('div').attr('title','My Title');
+        //    $('div').each(function(){
+        //        alert($(this).attr('title'));
+        //    });
+       
+        // $('div').each(function (i) {
+        //     $(this).attr('title', 'div ' + (i + 1) + ' title');
+        // });
+        // $('div').each(function () {
+        //     alert($(this).attr('title'));
+        // });
+   
+            var config = {
+                'title': 'New Div Title',
+                'style': 'border:3px solid red;',
+                'name': 'My Div'
+            };
+
+            $('div').attr(config);
+
+            var result = '';
+            $('div').each(function () {
+                result += 'title = ' + $(this).attr('title') + '&lt;br/&gt;';
+                result += 'style = ' + $(this).attr('style') + '&lt;br/&gt;';
+                result += 'name = ' + $(this).attr('name') + '&lt;br/&gt;&lt;br/&gt;';
+            });
+
+            $('#resultSpan').html(result);
+        });
+// Instead of creating a separate JSON object (config) and then passing it to attr() method, you can create the JSON object inline.
+// $('div').attr({
+//     'title': 'New Div Title',
+//     'style': 'border:3px solid red;',
+//     'name': 'My Div'
+// });
+            </script>
+    </head>
+    <body>
+        <div id="div1" title="MyDiv1">
+            Hello 
+        </div>
+        <div id="div2" title="MyDiv2">
+            Kishor 
+        </div>
+        <br>
+        <span id="spanresult"></span>
+    </body>
+</html>

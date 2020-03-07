@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+         // $('li').each(function(index,element)
+         // {
+         	// alert(index+":"+$(element).text());
+         	// if($(this).text()=="Canada"){
+
+         	// 	return false;
+         	// }//It Works like  exit  from function
+         	// alert($(this).text());
+
+         	// ** Implicit Iteration **//
+         	// When We Use each function. We Explicetly iterate over each function but with jquery css function. we don't need to do use each function every time when we use css stuffs.
+         	//Many Jquery methods implicitly iterate over with the collaction.css is one of them
+         	// $(this).css('color','red');
+
+            //***Performance considerations when using jquery each function**//
+             
+               // $('#divResult').html($('#divResult').html() + '<br/>' + $(this).text())
+           
+         // });   
+		// });
+		///***From a performance standpoint, there are 2 problems with the above code.
+// 1. jQuery needs to search the DOM for div element with id = divResult, for each list item in the collection. Since there are 5 list items, jquery searches the DOM 5 times for the same div element with id = divResult. The performance of the above code can be improved by caching the divResult element.
+
+// 2. The DOM element (div element with id = divResult) is being updated on each iteration. Again this is bad for performance. To improve the performance build a string variable with the required data on each iteration of the loop. Once the loop has completed, update the DOM element with the value that is present in the string varibale. This will ensure that the DOM element is updated only once and this is much better for performance.
+
+// The following is much better from a performance standpoint.
+         var result = '';
+        $('li').each(function () {
+            result += '<br/>' + $(this).text();
+        });
+        $('#divResult').html(result);
+        });
+	</script>
+<!-- We Use Each function to iterate through every index of the element.Here We Use index for index number and element with text function.
+$('li') returns all the  collection of list item element.
+-->
+</head>
+<body style="Arial">
+	<ul>
+		<li>US</li>
+		<li>India</li>
+		<li>Bangladesh</li>
+		<li>Canada</li>
+		<li>Australia</li>
+	</ul>
+ <div id="divResult"></div>
+</body>
+</html>

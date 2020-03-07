@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Checked Selector</title>
+		<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function () {
+            $('input[name="subject"]').click(function () {
+                getCheckedCheckBoxes('subject');
+            });
+            //('input["name=subject"]')for select when clicking checkbox and display the result.
+            //#btnGetSelectedSubjects for button submit
+             $('input[name="cities"]').click(function () {
+               
+               getCheckedCheckBoxes('cities');
+            });
+             //('input["name=cities"]')for select when clicking checkbox and display the result.
+             var getCheckedCheckBoxes = function(groupName){
+
+             var result =  $('input[name="'+groupName+'"]:checked');// With type= text Selects only that are checked.using :checked.
+                if (result.length > 0) {
+                     
+                     var resultString = result.length +"checkboxs are checked<br/>";
+                     //Shows how many checkbox are selected 
+                    
+                    result.each(function(){
+                        var selectValue = $(this).val();
+
+                        resultString += selectValue+"-"+$('label[for="option-' + selectValue + '"]').text()+"<br>";
+                        //with each function this will works like loop bring the value with this keyword.
+                    });
+
+                    $('#div'+groupName).html(resultString);
+                }
+                else {
+                    $('#div'+groupName).html("No Checkbox are  checked");
+                }
+            };
+        });
+	</script>
+</head>
+<body style="font-family: Arial">
+Gender:
+<br>
+<input type="checkbox" name="subject" value="ht">
+<label for="option-html">HTML</label>
+<input type="checkbox" name="subject" value="css">
+<label for="option-cs">CSS</label>
+<input type="checkbox" name="subject" value="bot">
+<label for="option-bot">BOOTSTRAP</label>
+<input type="checkbox" name="subject" value="js">
+<label for="option-js">JAVASCRIPT</label>
+<br>
+<br>
+<input type="checkbox" name="cities" value="Dh">
+<label for="option-Dh">Dhaka</label> 
+<input type="checkbox" name="cities" value="Raj">
+<label for="option-Raj">Rajshai</label>
+<input type="checkbox" name="cities" value="com">
+<lable for="option-com">Comilla</lable>
+<input type="checkbox" name="cities" value="Cox">
+<lable for="option-Cox">Cox's Bazar</lable>
+<br>
+<br>
+<!-- <input type="button" id="btnGetSelectedSubjects" value="Select Skills">
+<input type="button" id="btnGetSelectedCities" value="Select Cities"> -->
+<br/> <br/>
+<div id="divsubject">
+</div>
+<div id="divcities">
+</div>
+</body>
+</html>

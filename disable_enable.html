@@ -1,0 +1,77 @@
+Jquery
+ 1.Disable Selector $(:disable)
+ 2.Enable Selector $(:enable)
+  -->
+  Selects all disabled elements
+$(':disabled')
+
+Selects all disabled elements and sets a 3px solid red border
+<html>
+<head>
+    <title></title>
+    <script src="jquery-1.11.2.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(':disabled').css('border', '3px solid red');
+        });
+    </script>
+</head>
+<body style="font-family:Arial">
+    <table>
+        <tr>
+            <td>First Name </td>
+            <td><input type="text" disabled="disabled" /></td>
+        </tr>
+        <tr>
+            <td>Last Name </td>
+            <td><input type="text" disabled="disabled" /></td>
+        </tr>
+        <tr>
+            <td>Email </td>
+            <td><input type="text" /></td>
+        </tr>
+        <tr>
+            <td>Gender </td>
+            <td>
+                <select id="selectGender" disabled="disabled">
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Comments</td>
+            <td><textarea></textarea></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="submit" value="Submit" disabled="disabled" />
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
+<!-- 
+Selects all input elements that are disabled and sets a 3px solid red border
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('input:disabled').css('border', '3px solid red');
+    });
+</script>
+
+Selects all input elements with type=text that are disabled and sets a 3px solid red border
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('input[type="text"]:disabled').css('border', '3px solid red');
+    });
+</script>
+
+Selects all enabled elements
+$(':enabled')
+
+Selects all enabled textarea elements and sets a 3px solid red border
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('textarea:enabled').css('border', '3px solid red');
+    });
+</script>

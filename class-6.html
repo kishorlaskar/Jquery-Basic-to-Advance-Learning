@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JQuery Attribute Selector</title>
+		<script type="text/javascript" src="jquery.js"></script>
+        <script type="text/javascript">
+        	$(document).ready(function()
+        		{
+        			// $('[title]').css('background-color','red');//Select title attribute and changes
+        			$('[title = "div1title"]').css('background-color','red');
+        			$('[title = "div2title"]').css('background-color','green');
+        			$('[title = "div3title"]').css('background-color','blue'); 
+        			$('div[title="div4title"][style="background-color:yellow"]').css('border','5px solid black');
+        		});
+        </script>
+</head>
+<body>
+	<div title="div1title" style="background-color:red">
+          Hello EveryOne I am KL Here.
+	</div>
+		<div title="div1title" style="background-color:red">
+          Hello EveryOne I am KL Here.
+	</div>
+		<div title="div2title" style="background-color:red">
+          Hello EveryOne I am KL Here.
+	</div>
+		<div title="div3title" style="background-color:red">
+          Hello EveryOne I am KL Here.
+	</div>
+		<div title="div1title" style="background-color:red">
+          Hello EveryOne I am KL Here.
+	</div>
+			<div title="div4title" style="background-color:yellow">
+          Change Here
+	</div>
+
+
+</body>
+</html>

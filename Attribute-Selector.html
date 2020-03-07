@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>case Insensitive Attribute Selector</title>
+		<script type="text/javascript" src="jquery.js"></script> -->
+	<!-- 	<script type="text/javascript">
+			$(document).ready(function()
+			{
+              $('div[title]').filter(function()
+              	{
+              		return $(this).attr('title').toLowerCase() == "divtitle";
+              	}).css('border','3px solid black');
+			});
+		</script> -->
+		<!-- if there is any title have value contain Div -->
+		<script type="text/javascript">
+			$(document).ready(function()
+				{
+					$('div[title]').filter(function(){ 
+
+					return (/Div/i).test($(this).attr('title'));
+				}).css('border','5px solid red');
+				});
+		</script>
+		<!-- using RegExp Constructor -->
+		<!-- <script type="text/javascript">
+			$(document).ready(function()
+				{
+					$('div[title]').filter(function(){ 
+
+					return RegExp('Div','i').test($(this).attr('title'));
+				}).css('border','5px solid green');
+				});
+		</script> -->
+</head>
+<body>
+         <div title="DivTitle">
+         	Hello
+         </div>
+         <div title="DIVTITLE">
+         	Evrey
+         </div>
+         <div title="divtitle">
+         	One
+         </div>
+</body>
+</html>

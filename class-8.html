@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Value Attribute
+	</title>
+	
+			<script type="text/javascript" src="jquery.js"></script>
+            <script type="text/javascript">
+            	$(document).ready(function()
+            		{
+            		$('[title = "divTitle"]').css('border','5px  solid red'); //Equal
+            	 $('[title != "divTitle1"]').css('border','5px solid black');//Not Equal
+             $('[title  *= "Title"]').css('border','5px solid gray');//Find where value is title
+            	  $('[title`="mySpan"]').css('border','5px solid yellow');//Find where value is mySpan and delimited By Space 
+            	  $('[title|="myTitle"]').css('border','5px solid green');// equal to myTitle or start with myTitle
+            	  $('[title^="divTitle"]').css('border','5px solid blue');//star with divTitle
+            	 $('[title$="end"]').css('border','5px solid #FF5733');
+            		});//End with end
+ 
+            </script>
+	
+</head>
+<body>
+    <div title="divTitle">
+    	Hello Eyeryone divTitle
+    </div>
+    <div title!="divTitle1">
+    	Hello Eyeryone divTitle1
+    </div>
+    <div title="Select Title">
+    	Hello Eyeryone Select Title
+    </div>
+    <span title="This is mySpan">
+    	Hello Eyeryone mySpan
+    </div>
+    <div title="myTitle one">
+    	Hello Eyeryone this is 
+    </div>
+   <div title="myTitle-one">
+    	Hello Eyeryone this is  mytitle-one
+    </div>
+        <div title="happy end">
+    	Hello Eyeryone this is end 
+    </div>
+
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Checked Selector</title>
+		<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function () {
+            $('input[name="subject"]').click(function () {
+                getCheckedCheckBoxes('subject');
+            });
+            //('input["name=subject"]')for select when clicking checkbox and display the result.
+            //#btnGetSelectedSubjects for button submit
+             $('input[name="cities"]').click(function () {
+               
+               getCheckedCheckBoxes('cities');
+            });
+             //('input["name=cities"]')for select when clicking checkbox and display the result.
+             var getCheckedCheckBoxes = function(groupName){
+
+             var result =  $('input[name="'+groupName+'"]:checked');// With type= text Selects only that are checked.using :checked.
+                if (result.length > 0) {
+                     
+                     var resultString = result.length +"checkboxs are checked<br/>";
+                     //Shows how many checkbox are selected 
+              
+                    
+                    result.each(function(){
+                        resultString += $(this).val()+"<br>";
+                        //with each function this will works like loop bring the value with this keyword.
+                    });
+
+                    $('#div'+groupName).html(resultString);
+                }
+                else {
+                    $('#div'+groupName).html("No Checkbox are  checked");
+                }
+            };
+        });
+	</script>
+</head>
+<body style="font-family: Arial">
+Gender:
+<br>
+<input type="checkbox" name="subject" value="HTML"> HTML
+<input type="checkbox" name="subject" value="CSS"> CSS
+<input type="checkbox" name="subject" value="BOOTSTRAP">BOOTSTRAP
+<input type="checkbox" name="subject" value="JAVASCRIPT">JAVASCRIPT
+<br>
+<br>
+<input type="checkbox" name="cities" value="Dhaka"> Dhaka
+<input type="checkbox" name="cities" value="Rajshai"> Rajshai
+<input type="checkbox" name="cities" value="Comilla"> Comilla
+<input type="checkbox" name="cities" value="Cox's Bazar">Cox's Bazar
+<br>
+<br>
+<!-- <input type="button" id="btnGetSelectedSubjects" value="Select Skills">
+<input type="button" id="btnGetSelectedCities" value="Select Cities"> -->
+<br/> <br/>
+<div id="divsubject">
+</div>
+<div id="divcities">
+</div>
+</body>
+</html>
